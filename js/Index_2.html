@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小彬项目	(runoob.com)</title>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+		</script>
+		<style>
+			#nuv .nuv-1 {
+				/* position:absolute ;
+				left: 0;
+				top: 30px; */
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-wrap: nowrap;
+				flex-direction: row;
+				list-style: none;
+			}
+
+			#nuv .nuv-2 {
+				/* float: left; */
+				border: 1px solid red;
+				width: 6rem;
+				height: 4rem;
+				line-height: 4rem;
+				text-align: center;
+				font-size: 20px;
+				box-shadow: 3px 4px 4px #008B8B;
+				margin-right: 50px;
+				/* border: 1px solid red; */
+				border-radius: 20px;
+				background-color: darkcyan;
+				flex-shrink: 1;
+				flex-grow: 1;
+			}
+
+
+			#nuv-1 li {
+				width: 6rem;
+				height: 4rem;
+				line-height: 4rem;
+				text-align: center;
+				font-size: 20px;
+				box-shadow: 3px 4px 4px #008B8B;
+				margin-right: 50px;
+				/* border: 1px solid red; */
+				border-radius: 20px;
+				background-color: darkcyan;
+				flex-shrink: 1;
+				flex-grow: 1;
+			}
+
+			li:hover {
+				background-color: mediumslateblue;
+				color: #ADD8E6;
+
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				$("#nuv div").hide();
+				$("#nuv li").mouseover(function() {
+					$(this).children().stop().slideDown();
+				})
+				$("#nuv li").mouseout(function() {
+					$("#nuv div").stop().slideUp();
+				})
+			})
+		</script>
+	</head>
+	<body>
+
+		<div id="nuv">
+			<ul class="nuv-1">
+				<li class="nuv-2">导航
+					<div>
+						<ul
+							style="list-style: none;background-color: cadetblue;text-decoration: none;line-height: 5rem;">
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E7%99%BE%E5%BA%A6">百度</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E7%9F%A5%E4%B9%8E">知乎</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E5%BE%AE%E5%8D%9A">微博</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E4%BA%AC%E4%B8%9C">京东</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="nuv-2">菜单
+					<div>
+						<ul
+							style="list-style: none;background-color: cadetblue;text-decoration: none;line-height: 5rem;">
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E7%99%BE%E5%BA%A6">百度</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E7%9F%A5%E4%B9%8E">知乎</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E5%BE%AE%E5%8D%9A">微博</a></li>
+							<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E4%BA%AC%E4%B8%9C">京东</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="nuv-2">详情
+					<!-- <div id="nuv-1">
+					<ul>
+						<li>子导航</li>
+						<li>子菜单</li>
+						<li>子详情</li>
+						<li>子社区</li>
+					</ul>
+				</div> -->
+				</li>
+				<li class="nuv-2">社区
+					<!-- <div id="nuv-1">
+					<ul>
+						<li>子导航</li>
+						<li>子菜单</li>
+						<li>子详情</li>
+						<li>子社区</li>
+					</ul>
+				</div> -->
+				</li>
+			</ul>
+		</div>
+
+	</body>
+</html>

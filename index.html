@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0 auto;
+				padding: 0;
+			}
+
+			ul,
+			ol {
+				margin-top: 1rem;
+				text-align: center;
+				overflow: hidden;
+			}
+
+			li {
+				width: 14%;
+				height: 2rem;
+				line-height: 2rem;
+				float: left;
+				list-style: none;
+			}
+
+			#box {
+				width: 90%;
+			}
+
+			#top {
+				height: 3rem;
+				line-height: 3rem;
+				text-align: center;
+				background-color: lightblue;
+			}
+		</style>
+		<script type="text/javascript">
+
+		</script>
+	</head>
+	<body>
+	<h1>hello word!!!</h1>
+		<div id="top">
+			<select onchange="change()">
+			</select>
+			年
+			<select onchange="change()">
+			</select>
+			月
+		</div>
+		<ul>
+			<li>星期日</li>
+			<li>星期一</li>
+			<li>星期二</li>
+			<li>星期三</li>
+			<li>星期四</li>
+			<li>星期五</li>
+			<li>星期六</li>
+		</ul>
+		<ol id="detail">
+
+		</ol>
+
+		<script type="text/javascript">
+		    var nowdate = new Date();
+			var select = document.getElementsByTagName('select');
+
+			function change() {
+				var year = select[0].value;
+				var month = parseInt(select[1].value);
+				var fristday = fday(year, month);
+				var countday = cdays(year, month);
+				det(fristday, countday);
+				var day = nowdate.getDate();
+				var year1=nowdate.getFullYear();
+				var month1=nowdate.getMonth();
+				if(year==year1&&month==month1){
+					for (var i = 0; i < countday; i++) {
+						if (i + 1 == day) {
+							document.getElementById('detail').getElementsByTagName('li')[fristday + i].style
+								.backgroundColor = 'lightblue';
+						}
+					}
+				}
+				
+
+			}
+			//返回每月第一天是星期几
+			function fday(year, month) {
+				var date = new Date(year, month, 1);
+				return date.getDay();
+			}
+			//返回每月共有几天
+			function cdays(year, month) {
+				var date = new Date(year, month + 1, 0);
+				return date.getDate();
+			}
+			//动态生成新的日历
+			function det(fristday, lastday) {
+				var ol = document.getElementById('detail');
+				//var oldli = ol.getElementsByTagName('li');
+				//移除旧日历
+				// for (var i = 0; i < oldli.length; i++) {
+				// 	var oli=oldli[i];
+				// 	ol.removeChild(oli);
+
+				// }
+				ol.innerHTML = "";
+				//添加新日历
+				for (var i = 0; i < fristday; i++) {
+					var li = document.createElement('li');
+					// li.id="li-null";
+					li.innerHTML = " ";
+					ol.appendChild(li);
+				}
+				for (var i = 0; i < lastday; i++) {
+					var li = document.createElement('li');
+					li.innerHTML = i + 1;
+					ol.appendChild(li);
+				}
+			}
+			onload = (function() {
+				//获取当前日期
+				var year = parseInt(nowdate.getFullYear()); //年
+				var month = parseInt(nowdate.getMonth()); //月
+				//创建年select的第一个子节点
+				var op1 = document.createElement('option');
+				op1.value = year;
+				op1.innerHTML = year;
+				select[0].appendChild(op1);
+				//创建月select的第一个子节点
+				var op2 = document.createElement('option');
+				op2.value = month;
+				op2.innerHTML = month + 1;
+				select[1].appendChild(op2);
+				//创建年select的剩余子节点	当前年的前后十年
+				for (var i = year - 10; i < year + 10; i++) {
+					var op = document.createElement('option');
+					op.value = i;
+					op.innerHTML = i;
+					select[0].appendChild(op);
+				}
+				//创建月select的剩余子节点
+				for (var i = 0; i < 12; i++) {
+					var op = document.createElement('option');
+					op.value = i;
+					op.innerHTML = i + 1; //月的value：0~11
+					select[1].appendChild(op);
+				}
+				//声明每月第一天星期几和每月总天数
+				var fristday = fday(year, month);
+				var countday = cdays(year, month);
+				//创建日历
+				det(fristday, countday);
+				//更改当前日背景
+				var day = nowdate.getDate();
+				for (var i = 0; i < countday; i++) {
+					if (i + 1 == day) {
+						document.getElementById('detail').getElementsByTagName('li')[fristday + i].style
+							.backgroundColor = 'lightblue';
+					}
+				}
+			})
+
+			// function change_2() {
+			// 	var day = nowdate.getDate();
+			// 	for (var i = 0; i < countday; i++) {
+			// 		if (i + 1 == day) {
+			// 			document.getElementById('detail').getElementsByTagName('li')[fristday + i].style
+			// 				.backgroundColor = 'lightblue';
+			// 		}
+			// 	}
+			// }
+		</script>
+	</body>
+</html>
