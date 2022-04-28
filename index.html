@@ -39,9 +39,17 @@
 		<script type="text/javascript">
 
 		</script>
+		<link
+				rel="stylesheet"
+				href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		/>
 	</head>
 	<body>
-	<h1 style="text-align:center">精美日历</h1>
+
+		<div class="animate__bounceIn" style="flex-grow: 1"><h1 style="text-align:center">精美日历</h1></div>
+
+	</div>
+
 	<div id="top">
 			<select onchange="change()">
 			</select>
@@ -63,8 +71,11 @@
 
 		</ol>
 
-<footer><h3 style="text-align: center"><a href="https://gyb1111.github.io/js/Index_2.html">下拉列表</a></h3></footer>
-		<script type="text/javascript">
+		<div style="display: flex;flex-direction: row">
+			<div style="flex-grow: 1;margin-left: 20%;text-underline-mode: none"><h1 class="animate__hinge"><a href="https://gyb1111.github.io/js/Index_2.html">下拉列表</a></h1></div>
+			<div style="flex-grow: 1;"><h1 class="animate__hinge"><a href="https://fireworks.nianbroken.top/" style="text-underline: none">心情不好看个烟花吧！</a></h1></div>
+		</div>
+	<script type="text/javascript">
 		    var nowdate = new Date();
 			var select = document.getElementsByTagName('select');
 
