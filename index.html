@@ -43,38 +43,49 @@
 				rel="stylesheet"
 				href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="./css/component.css">
 	</head>
 	<body>
-	    <h1 class="animate__rollIn" style="text-align: center">欢迎来到大彬项目网（不完善版....）</h1>
-		<div class="animate__bounceIn animate__delay-5s" style="flex-grow: 1"><h1 style="text-align:center">精美日历</h1></div>
 
-	</div>
+		<div id="large-header" class="large-header" style="color: whitesmoke">
+			<div id="top">
+				<select onchange="change()">
+				</select>
+				年
+				<select onchange="change()">
+				</select>
+				月
+			</div>
+			<ul>
+				<li>星期日</li>
+				<li>星期一</li>
+				<li>星期二</li>
+				<li>星期三</li>
+				<li>星期四</li>
+				<li>星期五</li>
+				<li>星期六</li>
+			</ul>
+			<ol id="detail">
 
-	<div id="top">
-			<select onchange="change()">
-			</select>
-			年
-			<select onchange="change()">
-			</select>
-			月
-		</div>
-		<ul>
-			<li>星期日</li>
-			<li>星期一</li>
-			<li>星期二</li>
-			<li>星期三</li>
-			<li>星期四</li>
-			<li>星期五</li>
-			<li>星期六</li>
-		</ul>
-		<ol id="detail">
+			</ol>
 
-		</ol>
+			<div style="display: flex;flex-direction: row;margin: 100px">
+				<div style="flex-grow: 1;margin-left: 20%;text-underline-mode: none"><h1 class="animate__hinge"><a href="https://gyb1111.github.io/js/Index_2.html" style="text-decoration: none;color: powderblue">下拉列表</a></h1></div>
+				<div style="flex-grow: 1;text-underline-mode: none"><h1 class="animate__hinge"><a href="https://gyb1111.github.io/js/love.html" style="text-decoration: none;color: powderblue">Express Your love!</a></h1></div>
+				<div style="flex-grow: 1;"><h1 class="animate__hinge"><a href="https://fireworks.nianbroken.top/" style="text-decoration: none;color: powderblue">心情不好看个烟花吧！</a></h1></div>
 
-		<div style="display: flex;flex-direction: row;margin: 100px">
-			<div style="flex-grow: 1;margin-left: 20%;text-underline-mode: none"><h1 class="animate__hinge"><a href="https://gyb1111.github.io/js/Index_2.html" style="text-decoration: none">下拉列表</a></h1></div>
-			<div style="flex-grow: 1;"><h1 class="animate__hinge"><a href="https://fireworks.nianbroken.top/" style="text-decoration: none">心情不好看个烟花吧！</a></h1></div>
-		</div>
+			</div>
+			<canvas id="demo-canvas" width="1920" height="1080"></canvas>
+			</div>
+
+		<script src="./js/TweenLite.min.js"></script>
+		<script src="./js/EasePack.min.js"></script>
+		<script src="./js/demo-1.js"></script>
+
+
+
 	<script type="text/javascript">
 		    var nowdate = new Date();
 			var select = document.getElementsByTagName('select');
