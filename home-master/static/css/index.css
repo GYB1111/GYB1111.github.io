@@ -109,6 +109,7 @@ h1 {
     margin: .67em 0;
 }
 .layout_page {
+    opacity:0.7;
     display: flex;
     -webkit-box-align: start;
     align-items: flex-start;
@@ -268,6 +269,8 @@ aside_content .card-info .author-info__description {
     background-attachment: local;
     background-position: bottom;
     background-size: cover;
+    background-color: #344c67;
+    color: snow;
 }
 #footer-wrap {
     position: relative;
@@ -287,6 +290,7 @@ aside_content .card-info .author-info__description {
 @media screen and (min-width: 768px){
     #site-title {
         font-size: 2rem;
+        color: white;
     }
 
 }
